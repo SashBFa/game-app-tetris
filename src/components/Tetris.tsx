@@ -1,3 +1,6 @@
+import Board from "./Board";
+import { useBoard } from "./../hooks/useBoard";
+
 interface tetrisProps {
   rows: number;
   colums: number;
@@ -5,9 +8,10 @@ interface tetrisProps {
 }
 
 const Tetris = ({ rows, colums, setGameOver }: tetrisProps) => {
+  const [board, setBoard] = useBoard({ rows, colums });
   return (
-    <div>
-      <h1>Hey</h1>
+    <div className="">
+      <Board board={board} />
     </div>
   );
 };
